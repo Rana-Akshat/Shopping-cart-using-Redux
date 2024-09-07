@@ -92,6 +92,7 @@ button {
   background-color: #bc530e;
   border-radius: 7px;
   border-color: #c87018;
+  cursor: pointer;
 }
 
 .item-detail {
