@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { removeitem, buyitems } from '../features/cartSlice'
+import { removeitem, reducequantity,buyitems } from '../features/cartSlice'
 const Cartcomp = () => {
   
     const dispatch = useDispatch()
@@ -9,6 +9,10 @@ const Cartcomp = () => {
     const handleRemove = (id) => {
         dispatch(removeitem(id))
     }
+
+    const handleReduce = (id) => {
+        dispatch(reducequantity(id));
+      };
 
     const handleBuy = () => {
         dispatch(buyitems())
@@ -27,6 +31,7 @@ const Cartcomp = () => {
                         <div className="item-list" key = {item.id}>
                             <p className="item-detail">{item.name} : Rs.{item.price} X {item.quantity}</p>
                             <button className="item-remove" onClick={() =>handleRemove(item.id)}>Remove from cart</button>
+                            <button onClick={() => handleReduce(item.id)}>-</button>
                         </div>
                     ))}
                     <div className="total-price">
