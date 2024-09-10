@@ -1,10 +1,10 @@
 import React from "react";
 import { additem } from "../features/cartSlice";
-import { useDispatch } from "react-redux";
+import { useAppDispatch } from "../app/hooks";
 
 const Product = ({ id, name, price }) => {
 
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
 
     const handleadd = () => {
         dispatch(additem({ id, name, price }))

@@ -43,8 +43,14 @@ export const cartSlice = createSlice({
             state.items = []
             state.totalPrice = 0
         }
+    },
+    selectors: {
+        selectitems: (state) => state.items,
+        selecttotalprice: (state) => state.totalPrice
     }
 })
 
 export const {additem, removeitem, reducequantity, buyitems} = cartSlice.actions;
+export const { selectitems, selecttotalprice }  = cartSlice.selectors
+
 export default cartSlice.reducer;
