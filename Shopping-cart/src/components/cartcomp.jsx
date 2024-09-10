@@ -30,10 +30,10 @@ const Cartcomp = () => {
             ) : (
                 <div className="cart-items">
                     {items.map((item) => (
-                        <div className="item-list" key = {items.id}>
-                            <p className="item-detail">{items.name} : Rs.{items.price} X {items.quantity}</p>
-                            <button className="item-remove" onClick={() =>handleRemove(items.id)}>Remove from cart</button>
-                            <button onClick={() => handleReduce(items.id)}>-</button>
+                        <div className="item-list" key = {item.id}>
+                            <p className="item-detail">{item.name} : Rs.{item.price} X {item.quantity}</p>
+                            <button className="item-remove" onClick={() =>handleRemove(item.id)}>Remove from cart</button>
+                            <button onClick={() => handleReduce(item.id)}>-</button>
                         </div>
                     ))}
                     <div className="total-price">
